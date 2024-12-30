@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Operators Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .calculator {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .calculator input, .calculator select, .calculator button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            text-align: center;
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Unique Operators Demo</h1>
+    <div class="calculator">
+        <input type="number" id="input1" placeholder="Enter first value" oninput="resetResult()" />
+        <input type="number" id="input2" placeholder="Enter second value (if needed)" oninput="resetResult()" />
+        <select id="uniqueOperator" onchange="resetResult()">
+            <option value="exponentiation">Exponentiation (a^b)</option>
+            <option value="increment">Increment (a + 1)</option>
+            <option value="decrement">Decrement (a - 1)</option>
+            <option value="ternary">Ternary (a > b)</option>
+            <option value="logicalNullish">Nullish Coalescing (a ?? 'default')</option>
+        </select>
+        <button onclick="performUniqueOperation()">Calculate</button>
+        <div class="result" id="uniqueResult"></div>
+    </div>
+
+    <script src="operators.js"></script>
+</body>
+</html>
